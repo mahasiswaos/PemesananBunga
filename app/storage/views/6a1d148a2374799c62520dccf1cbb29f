@@ -1,0 +1,52 @@
+<?php $__env->startSection('content'); ?>
+<div class="panel panel-warning" class="col-lg-6">
+    <h2><span class="glyphicon glyphicon-plus"></span>Tambah Pesanan</h2>
+     <div class="panel-footer">
+<form method="post" class="form-horizontal" action="<?php echo URL::to('/order/pesan/proses');?>">
+    
+    <div class="form-group">
+        <div class="col-lg-6">
+        <label>ID Pelanggan</label>
+        <select name="member" class="form-control">
+            <?php foreach($member as $m){ ?>
+            <option value="<?php echo $m->id_pelanggan ?>"><?php echo $m->nama ?></option>
+            <?php } ?>
+        </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-6">
+        <label>ID Bunga</label>
+        <select name="bunga" class="form-control">
+            <?php foreach($bunga as $b){ ?>
+            <option value="<?php echo $b->id_bunga ?>"><?php echo $b->nama_bunga ?></option>
+            <?php } ?>
+        </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-6">
+        <label>Harga</label>
+        <input type="text" name="harga"class="form-control" placeholder="">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-6">
+        <label>Jumlah Pemesanan</label>
+        <input type="text" name="jumlah_pemesanan"class="form-control" placeholder="">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-6">
+        <label>Total Bayar</label>
+        <input type="text" name="total_bayar"class="form-control" placeholder="">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" name="submit" class="btn btn-warning" ><span class="glyphicon glyphicon-ok-sign"></span> Simpan Pesanan </button>
+        <button type="reset" name="reset" class="btn btn-primary" > <span class="glyphicon glyphicon-refresh"></span> Batal</button>
+    </div>
+</form>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.bootstrap3.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,42 @@
+<?php $__env->startSection('content'); ?>
+<div class="panel panel-warning" class="col-lg-6">
+    <h2><span class="glyphicon glyphicon-plus"></span>Tambah Data Bunga</h2>
+     <div class="panel-footer">
+         <form method="post" enctype="multipart/form-data"
+               class="form-horizontal" action="<?php echo URL::to('/draft/tambah/proses');?>">
+    <div class="form-group">
+        <div class="col-lg-6">
+        <label>Nama_Bunga</label>
+        <input type="text" name="nama_bunga" class="form-control" placeholder="NamaBunga">
+    </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-6">
+        <label>Gambar</label>
+        <input type="file" name="gambar" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-6">
+        <label>Harga_Bunga</label>
+        <input type="text" name="harga_bunga" class="form-control" placeholder="HargaBunga">
+    </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-6">
+        <label>Nama_Latin</label>
+        <input type="text" name="nama_latin" class="form-control" placeholder="NamaLatin">
+    </div>
+    </div>
+    <div class="form-group">
+     <div class="col-lg-6">
+        <button type="submit" name="submit" class="btn btn-warning" ><span class="glyphicon glyphicon-ok-sign"></span> Simpan data </button>
+        <button type="reset" name="reset" class="btn btn-primary" > <span class="glyphicon glyphicon-refresh"></span> Batal</button>
+    </div>
+    </div>
+</form>
+     </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.bootstrap3.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

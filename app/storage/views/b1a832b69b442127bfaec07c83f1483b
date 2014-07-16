@@ -1,0 +1,30 @@
+<?php $__env->startSection('content'); ?>
+<a href="<?php echo URL::to('/order/pesan'); ?>"class="btn btn-success" ><span class="glyphicon glyphicon-plus"></span>Tambah Pesanan </a>
+<h2> Data Pesanan Bunga online </h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID Bunga</th>
+            <th>Harga</th>
+            <th>Jumlah Pemesanan</th>
+            <th>Total Bayar</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($order as $val){ ?>
+        <tr>
+            <td><?php echo $val->id_bunga ?></td>
+            <td><?php echo $val->harga ?></td>
+            <td><?php echo $val->jumlah_pemesanan ?></td>
+            <td><?php echo $val->total_bayar ?></td>
+            <td>
+               
+                 <a class="btn btn-info"href="">edit</a>
+                <a class="btn btn-warning " href="">delete</a>
+            </td>
+        </tr>
+        <?php } ?>
+    </tbody>
+</table>
+<?php echo $__env->make('layout.bootstrap3.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
